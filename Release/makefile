@@ -8,7 +8,6 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include freertos/src/subdir.mk
 -include example/src/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -30,7 +29,7 @@ all: periph_uart.axf
 periph_uart.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\Debug" -L"C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\Debug" -Xlinker -Map="periph_uart.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "periph_uart_Debug.ld" -o "periph_uart.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\Release" -L"C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\Release" -Xlinker -Map="periph_uart.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "periph_uart_Release.ld" -o "periph_uart.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

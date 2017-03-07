@@ -1,4 +1,9 @@
-example/src/uart.o example/src/uart.d: ../example/src/uart.c \
+freertos/src/FreeRTOSCommonHooks.o freertos/src/FreeRTOSCommonHooks.d: \
+ ../freertos/src/FreeRTOSCommonHooks.c \
+ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/FreeRTOS.h \
+ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/projdefs.h \
+ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\example\inc/FreeRTOSConfig.h \
+ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/board.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/chip.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/sys_config.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/cmsis.h \
@@ -55,20 +60,25 @@ example/src/uart.o example/src/uart.d: ../example/src/uart.c \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/iap_18xx_43xx.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/error.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/i2cm_18xx_43xx.h \
- C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/board.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/board_api.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/lpc_types.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/lpc_phy.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/board.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/uda1380.h \
- C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/FreeRTOS.h \
- C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/projdefs.h \
- C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\example\inc/FreeRTOSConfig.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/portable.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/portmacro.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/mpu_wrappers.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/task.h \
- C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/list.h
+ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/list.h \
+ ../freertos/src/FreeRTOSCommonHooks.h
+
+C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/FreeRTOS.h:
+
+C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/projdefs.h:
+
+C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\example\inc/FreeRTOSConfig.h:
+
+C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/board.h:
 
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/chip.h:
 
@@ -182,8 +192,6 @@ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/error
 
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/i2cm_18xx_43xx.h:
 
-C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/board.h:
-
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/board_api.h:
 
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/lpc_types.h:
@@ -194,12 +202,6 @@ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857
 
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_board_keil_mcb_1857\inc/uda1380.h:
 
-C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/FreeRTOS.h:
-
-C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/projdefs.h:
-
-C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\example\inc/FreeRTOSConfig.h:
-
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/portable.h:
 
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/portmacro.h:
@@ -209,3 +211,5 @@ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\in
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/task.h:
 
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/list.h:
+
+../freertos/src/FreeRTOSCommonHooks.h:

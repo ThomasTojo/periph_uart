@@ -5,11 +5,11 @@
  * Generated linker script file for LPC1857
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.23
- * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 07-Mar-2017 17:26:50
+ * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 07-Mar-2017 17:10:12
  */
 
-INCLUDE "periph_uart_Debug_library.ld"
-INCLUDE "periph_uart_Debug_memory.ld"
+INCLUDE "periph_uart_Release_library.ld"
+INCLUDE "periph_uart_Release_memory.ld"
 
 ENTRY(ResetISR)
 
