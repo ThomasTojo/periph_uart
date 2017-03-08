@@ -84,7 +84,7 @@ static void vUART_ReadTask1(void *pvParameters) {
 			}
 		}
 		/* About a 50Hz delay */
-		vTaskDelay(configTICK_RATE_HZ /1);
+		vTaskDelay(configTICK_RATE_HZ /100);
 	}
 }
 
