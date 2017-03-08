@@ -5,7 +5,7 @@
  * Generated linker script file for LPC1857
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.23
- * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 08-Mar-2017 11:30:46
+ * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 08-Mar-2017 14:14:50
  */
 
 INCLUDE "periph_uart_Debug_library.ld"
