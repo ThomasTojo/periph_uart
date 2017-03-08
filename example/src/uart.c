@@ -4,6 +4,7 @@
 #include "board.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "semphr.h"
 
 /*****************************************************************************
  * Private types/enumerations/variables
@@ -56,6 +57,8 @@
 uint8_t buffer[10];
 uint8_t count = 0;
 
+SemaphoreHandle_t xSemaphore = NULL;
+
 static void prvSetupHardware(void)
 {
 	SystemCoreClockUpdate();
@@ -71,20 +74,32 @@ static void prvSetupHardware(void)
 static void vUART_ReadTask1(void *pvParameters) {
 	bool LedState = false;
 	char InputByte;
+    if ( (xSemaphore = xSemaphoreCreateBinary())==NULL )
+    	DEBUGOUT("FAiled to create the binary semaphore");
+    xSemaphoreGive(xSemaphore);
 	while(1)
 	{
-		if(count<10)
-		{
-			if( Chip_UART_Read(LPC_UART, &InputByte, 1)>0 )
+			if( xSemaphoreTake( xSemaphore, ( TickType_t ) 10 ) == pdTRUE  )
 			{
-				buffer[count] = InputByte;
-				count++;
-				Board_LED_Set(6, LedState);			//led6 off
+				if(count<10)
+						{
+							if( Chip_UART_Read(LPC_UART, &InputByte, 1)>0 )
+							{
+								buffer[count] = InputByte;
+								count++;
+								Board_LED_Set(6, LedState);			//led6 off
+								LedState = (bool) !LedState;
+							}
+						}
+				xSemaphoreGive(xSemaphore);
+				Board_LED_Set(4, LedState);			//led6 off
 				LedState = (bool) !LedState;
 			}
-		}
+
+
+
 		/* About a 50Hz delay */
-		vTaskDelay(configTICK_RATE_HZ /100);
+		vTaskDelay(configTICK_RATE_HZ /1000);
 	}
 }
 
@@ -92,15 +107,22 @@ static void vUART_ReadTask1(void *pvParameters) {
 static void vUART_WriteTask2(void *pvParameters) {
 	bool LedState = false;
 	char str[] = "\r\nYou typed:";
+
+	while(xSemaphore == NULL)
+		vTaskDelay(100);
 	while(1)
 	{
-		if(count>0)
-		{
-			Chip_UART_SendBlocking(LPC_UART, str, strlen(str));
-			Chip_UART_SendBlocking(LPC_UART, buffer, count);
-			Chip_UART_SendBlocking(LPC_UART, "\r\n", strlen("\r\n"));
-			count=0;
-		}
+			if(  xSemaphoreTake( xSemaphore, ( TickType_t )10 ) == pdTRUE  )
+			{
+				if(count>0)
+				{
+					Chip_UART_SendBlocking(LPC_UART, str, strlen(str));
+					Chip_UART_SendBlocking(LPC_UART, buffer, count);
+					Chip_UART_SendBlocking(LPC_UART, "\r\n", strlen("\r\n"));
+					count=0;
+				}
+				xSemaphoreGive(xSemaphore);
+			}
 		Board_LED_Set(1, LedState);			//led1 off
 		LedState = (bool) !LedState;
 
@@ -134,6 +156,7 @@ int main(void)
 
 	//free RTOS hardware setup and task creation
 	prvSetupHardware();
+
 
 	/* uart read task */
 	xTaskCreate(vUART_ReadTask1, "vUART_ReadTask1", configMINIMAL_STACK_SIZE,

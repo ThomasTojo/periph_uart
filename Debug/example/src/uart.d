@@ -68,7 +68,9 @@ example/src/uart.o example/src/uart.d: ../example/src/uart.c \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/portmacro.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/mpu_wrappers.h \
  C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/task.h \
- C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/list.h
+ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/list.h \
+ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/semphr.h \
+ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/queue.h
 
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\lpc_chip_18xx\inc/chip.h:
 
@@ -209,3 +211,7 @@ C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\in
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/task.h:
 
 C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/list.h:
+
+C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/semphr.h:
+
+C:\Users\Thomas\Documents\LPCXpresso_8.2.2_650\workspace\periph_uart\freertos\inc/queue.h:
