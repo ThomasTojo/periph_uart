@@ -75,7 +75,7 @@ static void vUART_ReadTask1(void *pvParameters) {
 	bool LedState = false;
 	char InputByte;
     if ( (xSemaphore = xSemaphoreCreateMutex())==NULL )
-    	DEBUGOUT("FAiled to create the binary semaphore");
+    	DEBUGOUT("FAiled to create the semaphoreMutex");
 	while(1)
 	{
 			if( xSemaphoreTake( xSemaphore, ( TickType_t ) 10 ) == pdTRUE  )
